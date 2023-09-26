@@ -34,10 +34,22 @@
           @focusout="dropdownOpen = false"
         >
           <li>
-            <router-link class="font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/settings/account" @click="dropdownOpen = false">Settings</router-link>
+            <router-link class="font-medium text-sm hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/profil" @click="dropdownOpen = false">
+           <n-icon class="mr-2" size="20" color="black">
+             <User />
+            </n-icon> profil</router-link>
           </li>
           <li>
-            <router-link class="font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/signin" @click="dropdownOpen = false">Sign Out</router-link>
+            <router-link class="font-medium text-sm hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/" @click="dropdownOpen = false">
+           <n-icon class="mr-2" size="20" color="black">
+             <Password16Filled />
+            </n-icon> parol</router-link>
+          </li>
+          <li class="text-red">
+            <router-link class="font-medium text-sm text-red-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/" @click="dropdownOpen = false">
+           <n-icon class="mr-2" size="20" color="red">
+             <Logout />
+            </n-icon> Chiqish</router-link>
           </li>
         </ul>
       </div> 
@@ -48,15 +60,22 @@
 <script>
 import { ref, onMounted, onUnmounted } from 'vue'
 import UserAvatar from '../images/user-avatar-32.png'
-
+import {User} from "@vicons/tabler"
+import {Password16Filled} from "@vicons/fluent"
+import {Logout} from "@vicons/tabler"
 export default {
   name: 'DropdownProfile',
   props: ['align'],
   data() {
     return {
-      UserAvatar: UserAvatar,
+      UserAvatar: UserAvatar
     }
-  },  
+  }, 
+  components:{
+      User,
+      Password16Filled,
+      Logout
+    }, 
   setup() {
 
     const dropdownOpen = ref(false)

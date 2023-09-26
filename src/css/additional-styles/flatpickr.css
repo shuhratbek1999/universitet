@@ -74,7 +74,7 @@
     border: none;
 }
 
-.flatpickr-day.flatpickr-disabled,
+/* .flatpickr-day.flatpickr-disabled,
 .flatpickr-day.flatpickr-disabled:hover,
 .flatpickr-day.prevMonthDay,
 .flatpickr-day.nextMonthDay,
@@ -82,7 +82,7 @@
 .flatpickr-day.notAllowed.prevMonthDay,
 .flatpickr-day.notAllowed.nextMonthDay {
     @apply bg-transparent;
-}
+} */
 
 .flatpickr-day, 
 .flatpickr-day.prevMonthDay, 
