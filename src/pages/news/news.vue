@@ -197,9 +197,12 @@ const Delete = (id) => {
     color: white;
 }
 @media(max-width: 375px){
-    .title{
-        font-size: 15px;
-        margin: 10px 0px;
-    }
+.title{
+    font-size: 15px;
+    margin: 10px 0px;
+}
+.tablee{
+    overflow: scroll;
+}
 }
 </style>

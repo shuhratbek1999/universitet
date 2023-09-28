@@ -201,5 +201,8 @@ const Delete = (id) => {
     margin: 10px 0px;
     font-size: 15px;
 }
+.tablee{
+    overflow: scroll;
+}
 }
 </style>

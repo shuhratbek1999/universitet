@@ -249,6 +249,11 @@ const options = ref([
         label: "chiqish",
         key: "chiqish",
         icon: renderIcon(LogOutOutline)
+    },
+    {
+        label: "Admin",
+        key: "admin",
+        icon: renderIcon(PersonCircleOutline)
     }
 ])
 let input_type = ref("password")
@@ -378,8 +383,11 @@ const HandleSelect = (e) => {
     else if(e == 'chiqish'){
         router.push("/")
     }
-    else{
+    else if(e == 'register'){
         router.push("/register")
+    }
+    else{
+        router.push("/yangiliklar")
     }
 }
 onMounted(() => {
