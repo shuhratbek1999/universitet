@@ -1,5 +1,5 @@
 <template>
-     <div class="container">
+     <div class="containerss">
          <div class="login_top">
               <div class="login_about">
                   <ul>
@@ -249,7 +249,7 @@ const Login = () => {
 }
 </script>
 <style scoped>
-.container{
+.containerss{
     width: 100%;
     height: 100vh;
     background: rgba(33, 33, 99, 0.915);
@@ -357,7 +357,7 @@ const Login = () => {
 }
 
 @media(max-width: 375px){
-.container{
+.containerss{
     width: 370px;
     height: 100vh;
     background: rgba(33, 33, 99, 0.915);

@@ -1,5 +1,5 @@
 <template>
-     <div class="container">
+     <div class="containers">
           <div class="profil_header">
                 <div class="header_left1">
                      <n-icon color="white" class="line" size="20"><LineHorizontal320Filled /></n-icon>
@@ -396,7 +396,7 @@ onMounted(() => {
 })
 </script>
 <style scoped>
-.container{
+.containers{
     width: 100%;
     height: 100vh;
     background: rgba(33, 33, 99, 0.915);
@@ -556,7 +556,7 @@ onMounted(() => {
 }
 
 @media(max-width: 375px){
-.container{
+.containers{
     width: 370px;
     height: 100vh;
     background: rgba(33, 33, 99, 0.915);
