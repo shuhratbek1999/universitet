@@ -1,10 +1,13 @@
 <template>
     <div class="reyting">
+        <div class="topMenu">
+            <TopMenu />
+        </div>
         <div class="reyting_header">
             <div class="reyting_top">
                 <Navbar class="Navbar">
                     <template v-slot:image> 
-                       <img src="../../assets/images/logo-blue.png" alt="">
+                       <img src="../../assets/images/logoss.png" alt="">
                      </template>
                     <template v-slot:button> 
                         <div class="navbar_item">
@@ -119,6 +122,7 @@ import Navbar from "../../components/Navbar.vue";
 import Hujjat from "../../components/Hujjat.vue";
 import Tables from "../../components/Tables.vue";
 import Footer from "../../components/Footer.vue";
+import TopMenu from "../../components/TopMenu.vue";
 import {ClipboardBulletListLtr16Regular,Certificate24Filled} from "@vicons/fluent";
 import {useRouter} from "vue-router";
 const router = useRouter();
@@ -141,20 +145,49 @@ const Royhat = () => {
     flex-direction: column;
     align-items: center;
 }
+.topMenu{
+    width: 100%;
+    height: 40px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F8F9;
+    /* margin: 0 auto; */
+}
 .reyting_header{
-    width: 90%;
+    width: 100%;
     /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+.reyting_header .reyting_top{
+    width: 100%;
+    height: 60px;
+    /* border: 2px solid red; */
+    /* padding: 0px 50px; */
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
 }
 .navbar_item{
     display: flex;
 }
 .reyting_header_content{
+    width: 90%;
     display: flex;
+    justify-content: space-between;
     margin: 20px 0px;
 }
 .reyting_header_content .left{
     width: 460px;
     margin-right: 30px;
+    /* border: 2px solid red; */
 }
 .reyting_header_content .left .left_title{
     font-size: 44px;
@@ -180,7 +213,9 @@ const Royhat = () => {
     flex-direction: column;
     align-items: center;
     background-color: rgba(213, 234, 241, 0.8);
+     z-index: 1;
     /* border: 2px solid red; */
+    /* position: relative; */
 }
 .reyting_lists .reyting_item{
     width: 90%;
@@ -229,15 +264,17 @@ const Royhat = () => {
     background-color: rgba(213, 234, 241, 0.8);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
     padding: 20px 0px;
 }
 .reyting .footer{
     width: 100%;
 }
+
+
 @media(max-width: 375px){
 .reyting{
-    width: 375px;
+    width: 100%;
     height: 100vh;
     /* border: 2px solid red; */
     background-color: rgb(229, 231, 231);
@@ -246,16 +283,20 @@ const Royhat = () => {
     flex-direction: column;
     align-items: center;
 }
+.topMenu{
+    display: none;
+}
 .reyting_header{
-    width: 370px;
-    /* border: 2px solid blue; */
+    width: 100%;
+    border: 2px solid blue;
 }
 .reyting_header_content{
     display: flex;
     margin: 20px 0px;
 }
 .reyting_header_content .left{
-    width: 400px;
+    width: 100%;
+    /* height: 100vh; */
     margin-right: 10px;
     /* border: 2px solid yellow; */
     padding: 10px;
@@ -283,7 +324,7 @@ const Royhat = () => {
     width: 150px !important;
 }
 .reyting_lists{
-    width: 360px;
+    width: 99%;
     height: 700px;
     display: flex;
     flex-direction: column;
@@ -292,7 +333,7 @@ const Royhat = () => {
     /* border: 2px solid blue; */
 }
 .reyting_lists .reyting_item{
-    width: 350px;
+    width: 99%;
     display: flex;
     /* justify-content: center; */
     flex-wrap: wrap;
@@ -300,7 +341,7 @@ const Royhat = () => {
     /* border: 2px solid blue; */
 }
 .reyting_lists .reyting_item .reyting_list{
-    width: 350px;
+    width: 99%;
     height: 100px;
     display: flex;
     /* border: 2px solid red; */
@@ -311,7 +352,7 @@ const Royhat = () => {
     background-color: rgb(236, 232, 232);
 }
 .reyting_list .reyting_list_left,.reyting_list .reyting_list_right{
-    width: 160px;
+    width: 45%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -323,7 +364,7 @@ const Royhat = () => {
     font-weight: 600;
 }
 .reyting_list .reyting_list_right .title, .reyting_list .reyting_list_left .title{
-    width: 250px;
+    width: 60%;
     margin-left: 20px;
     /* color: red; */
     font-size: 10px;
@@ -333,14 +374,14 @@ const Royhat = () => {
     font-size: 25px !important;
 }
 .reyting .hujjats{
-    width: 360px;
+    width: 100%;
     background-color: rgba(213, 234, 241, 0.8);
     display: flex;
     justify-content: center;
     /* border: 2px solid red; */
 }
 .tables{
-    width: 360px;
+    width: 99%;
     background-color: rgba(213, 234, 241, 0.8);
     display: flex;
     flex-direction: column;
@@ -348,7 +389,7 @@ const Royhat = () => {
     padding: 20px 10px;
 }
 .reyting .footer{
-    width: 360px;
+    width: 100%;
 }
 }
 </style>

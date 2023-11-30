@@ -2,9 +2,7 @@
     <div class="Navbars">
         <div class="navbar">
          <div class="navbar_item">
-             <slot name="image">
-                <img src="../assets/images/logo.png" width="50px" alt="">
-             </slot>
+              <div class="img"></div>
          </div>
          <div class="navbar_item navbar_items">
               <div class="navbar_list" @click="Reyting">Iqtidorli talabalar</div>
@@ -26,7 +24,7 @@
         <div class="hidden_navbar">
             <div class="hidden_img">
              <slot name="image">
-                <img src="../assets/images/logo.png" alt="">
+                <img src="../assets/images/logoss.png" alt="">
              </slot>
             </div>
             <n-icon class="menu" @click="Activate">
@@ -35,7 +33,6 @@
             <n-drawer
             v-model:show="active"
             :width="200"
-            :placement="placement"
             resizable
         >
             <n-drawer-content title="Menu" class="shadow-sm" closable>
@@ -78,27 +75,40 @@ const Dashboard = () => {
 <style scoped>
 .Navbars{
     width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
 }
 .hidden_navbar{
     display: none;
 }
 .navbar{
-    width: 100%;
-    height: 100px;
-     display: flex;
-     justify-content: space-between;
-    align-items: center;  
+    width: 90%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    border-top: 1px solid rgb(212, 210, 210);
+    border-bottom: 1px solid rgb(202, 200, 200);
+    /* border: 1px solid red;  */
 }
 .navbar .navbar_item {
     /* width: 33%; */
     display: flex;
     justify-content: space-around;
 }
-.navbar .navbar_item img{
+.navbar .navbar_item .img{
     width: 100px;
+    height: 80px;
     /* border: 2px solid red; */
+    background-image: url("../assets/images/logoss.png");
+     background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: red;
 }
 .navbar .navbar_item .navbar_list{
+    height: 30px;
     padding: 0px 20px;
     color: black;
     font-size: 16px;
@@ -106,16 +116,16 @@ const Dashboard = () => {
     cursor: pointer;
     transition: all 0.7s ease-in-out;
 }
-.navbar .navbar_list:nth-child(2n + 4){
+/* .navbar .navbar_list:nth-child(2n + 4){
     color: white;
-}
+} */
 .navbar .navbar_item .navbar_list:hover{
-    transform: scale(0.9);
+    border-bottom: 2px solid blue;
 }
 
 @media(max-width: 375px){
 .Navbars{
-    width: 360px;
+    width: 100%;
 }
 .navbar{
     display: none; 
@@ -125,13 +135,14 @@ const Dashboard = () => {
     color: white;
 }
 .hidden_navbar{
-    width: 360px;
-    height: 80px;
+    width: 99%;
+    height: 60px;
     /* border: 2px solid red; */
     display: flex;
     justify-content: space-between;
     align-items: center; 
     padding: 0px 20px;
+    background-color: rgba(145, 143, 143, 0.6);
     /* margin: 0px;
     padding: 0px; */
 }

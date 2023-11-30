@@ -1,6 +1,6 @@
 <template>
     <div class="elon">
-         <n-carousel show-arrow>
+         <n-carousel autoplay>
             <div class="elon_content">
             <!-- <img src="../assets/images/photo.jpg" alt=""> -->
              <div class="elon_list" v-for="(item, index) in elonlar" :key="index">
@@ -94,24 +94,26 @@ const elonlar = ref([
 .elon{
     width: 100%;
     height: 500px;
-    /* background-color: grey; */
+    background-color: #F7F8F9;
+    /* border: 2px solid red; */
 }
 
 .elon_content{
-    width: 100%;
+    width: 90%;
     height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;   
     flex-wrap: wrap;
     /* border: 2px solid red; */
+    margin: 0 auto;
 }
 .elon_content .elon_list{
     /* border: 2px solid red; */
-    width: 23%;
+    width: 23.5%;
     height: 400px;
-    background-color: rgba(201, 197, 197, 0.4);
-    margin: 5px;
+    /* background-color: rgba(201, 197, 197, 0.4); */
+    margin: 5px 9px;
     padding: 10px;
     box-shadow: 0px 0px 10px grey;
     transition: all 0.9s ease-in-out;
@@ -119,9 +121,9 @@ const elonlar = ref([
     border-radius: 5px;
     /* text-align: center; */
 }
-.elon_content .elon_list:hover{
+/* .elon_content .elon_list:hover{
     transform: scale(0.95,1.04);
-}
+} */
 .elon_list .news_img{
     display: flex;
     justify-content: center;
@@ -137,6 +139,8 @@ const elonlar = ref([
     padding: 10px 0px;
     font-weight: 600;
     font-family: sans-serif;
+     /* border: 2px solid red; */
+     min-height: 120px;
     /* font-style: */
 }
 .elon_list .news_text .btn{

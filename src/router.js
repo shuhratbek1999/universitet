@@ -19,6 +19,7 @@ import Fakultet from "./pages/Fakultet/Fakultet.vue";
 import Tasdiqlangan from "./pages/Tasdiqlangan/Tasdiqlangan.vue";
 import startUp from "./pages/startup/startup.vue";
 import Yangiliklar from "./pages/Yangiliklar/Yangiliklar.vue";
+// import statistika from "./pages/statistika/statistika.vue";
 const routerHistory = createWebHistory()
 
 const router = createRouter({
@@ -29,6 +30,11 @@ const router = createRouter({
       name: "Login",
       component: Login,
     },
+    // {
+    //   path: "/statistika",
+    //   name: "Statistikaa",
+    //   component: statistika,
+    // },
     {
       path: "/yangiliklar",
       name: "Newss",

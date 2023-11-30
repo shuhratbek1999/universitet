@@ -1,7 +1,7 @@
 <template>
     <div class="flex h-screen overflow-hidden">
          <Sidebar :sidebarOpen="sidebarOpen" @close-sidebar="sidebarOpen = false" />
-         <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+         <div class="relative flex flex-col flex-1">
       <!-- Site header -->
       <Header :sidebarOpen="sidebarOpen" @toggle-sidebar="sidebarOpen = !sidebarOpen" />
       <div class="flex flex-col items-center w-12/12">
@@ -201,8 +201,8 @@ const Delete = (id) => {
     font-size: 15px;
     margin: 10px 0px;
 }
-.tablee{
+/* .tablee{
     overflow: scroll;
-}
+} */
 }
 </style>

@@ -37,66 +37,126 @@
                         <n-form ref="formRef" :model="model">
                         <div class="ariza">
                             <div class="ariza_about">
-                                <div class="title">1. Fanlarni o'zlashtirish darajasi (o'quv varaqasi nusxasi)</div>
+                                <div class="title">
+                                    <span>1. Fanlarni o'zlashtirish darajasi (o'quv varaqasi nusxasi)</span>
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                    </div>
                                 <div class="files">
                                     <!-- <input ref="file" v-model="model.malumotnoma"   type="file" > -->
-                                    <n-input type="file" v-model:value="model.malumotnoma" />
+                                    <n-input placeholder="" type="file" v-model:value="model.malumotnoma" />
                                 </div>
                             </div>
                             <div class="ariza_about">
-                                <div class="title">2. Respublika va xalqaro olimpiadalarda erishgan yutuqlari (diplom)</div>
+                                <div class="title">
+                                    2. Respublika va xalqaro olimpiadalarda erishgan yutuqlari (diplom)
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                </div>
                                 <div class="files">
-                                    <n-input type="file" v-model:value="model.rengting" />
+                                    <n-input placeholder="" type="file" v-model:value="model.reyting" />
                                 </div>
                             </div>
                             <div class="ariza_about">
-                                <div class="title">3. Ilmiy-tadqiqot ishi doirasida chiqarilgan tezis va maqolalari (respublika va xalqaro miqyosdagi konferensiyalar)</div>
+                                <div class="title">
+                                    3. Ilmiy-tadqiqot ishi doirasida chiqarilgan tezis va maqolalari (respublika va xalqaro miqyosdagi konferensiyalar)
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                    </div>
                                 <div class="files">
-                                    <n-input type="file" v-model:value="model.fakultet_dek_tav" />
+                                    <n-input placeholder="" type="file" v-model:value="model.fakultet_dek_tav" />
                                 </div>
                             </div>
                         </div>
                         <div class="ariza">
                             <div class="ariza_about">
-                                <div class="title">4. Ilmiy-tadqiqot ishi doirasida chiqarilgan ilmiy maqolalari (respublika va xalqaro ilmiy jurnallar)</div>
+                                <div class="title">
+                                    4. Ilmiy-tadqiqot ishi doirasida chiqarilgan ilmiy maqolalari (respublika va xalqaro ilmiy jurnallar)
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                    </div>
                                 <div class="files">
-                                    <n-input type="file" v-model:value="model.xalqaro_konf" />
+                                    <n-input placeholder="" type="file" v-model:value="model.xalqaro_konf" />
                                 </div>
                             </div>
                             <div class="ariza_about">
-                                <div class="title">5. Ilmiy-tadqiqot ishi doirasida chiqarilgan monografiya, o'quv, uslubiy qo'llanmasi</div>
+                                <div class="title">
+                                    5. Ilmiy-tadqiqot ishi doirasida chiqarilgan monografiya, o'quv, uslubiy qo'llanmasi
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                    </div>
                                 <div class="files">
-                                    <n-input type="file" v-model:value="model.res_konf" />
+                                    <n-input placeholder="" type="file" v-model:value="model.res_konf" />
                                 </div>
                             </div>
                             <div class="ariza_about">
-                                <div class="title">6. Xorijiy tillarni bilish darajasi (sertifikat)</div>
+                                <div class="title">
+                                    6. Xorijiy tillarni bilish darajasi (sertifikat)
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                    </div>
                                 <div class="files">
-                                    <n-input type="file" v-model:value="model.xalq_jurnal" />
+                                    <n-input placeholder="" type="file" v-model:value="model.xalq_jurnal" />
                                 </div>
                             </div>
                             <div class="ariza_about">
-                                <div class="title">7. Axborot texnologiyalari sohasidagi erishgan yutuqlari (sertifikat)</div>
+                                <div class="title">
+                                    7. Axborot texnologiyalari sohasidagi erishgan yutuqlari (sertifikat)
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                    </div>
                                 <div class="files">
-                                    <n-input type="file" v-model:value="model.res_jurnal" />
+                                    <n-input placeholder="" type="file" v-model:value="model.res_jurnal" />
                                 </div>
                             </div>
                             <div class="ariza_about">
-                                <div class="title">8.Republika va xalqaro tanlovlarda erishgan yutuqlari (sertifikat va diplom)</div>
+                                <div class="title">
+                                    8.Republika va xalqaro tanlovlarda erishgan yutuqlari (sertifikat va diplom)
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                    </div>
                                 <div class="files">
-                                     <n-input type="file" v-model:value="model.muallif_guvoh" />
+                                     <n-input placeholder="" type="file" v-model:value="model.muallif_guvoh" />
                                 </div>
                             </div>
                             <div class="ariza_about">
-                                <div class="title">9.Innovatsion yechimlar va ishlanmalar, startap loyihalarini yaratishdagi faol ishtiroki (sertifikat, diplom, guvohnoma)</div>
+                                <div class="title">
+                                    9.Innovatsion yechimlar va ishlanmalar, startap loyihalarini yaratishdagi faol ishtiroki (sertifikat, diplom, guvohnoma)
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                    </div>
                                 <div class="files">
-                                     <n-input type="file" v-model:value="model.yutuq" />
+                                     <n-input placeholder="" type="file" v-model:value="model.yutuq" />
                                 </div>
                             </div>
                              <div class="ariza_about">
-                                <div class="title">10. Ijodiy yutuqlari</div>
+                                <div class="title">
+                                    10. Ijodiy yutuqlari
+                                    <div class="tavsif">
+                                        <span>Tavsif</span>
+                                        <n-input type="text" v-model:value="model.tavsif" clearable/>
+                                    </div>
+                                    </div>
                                 <div class="files">
-                                    <n-input type="file" v-model:value="model.til_sertifikat" />
+                                    <n-input placeholder="" type="file" v-model:value="model.til_sertifikat" />
                                 </div>
                             </div>
                         </div>
@@ -179,34 +239,6 @@ const handleChange = (e) => {
 const Dashboard = () => {
     router.push("/dashboard")
 }
-const language = ref([
-    {id: 1, name: "O'zbek"},
-    {id: 2, name: "Rus"},
-    {id: 3, name: "Ingliz"},
-    {id: 4, name: "Qozoq"},
-    {id: 5, name: "Tojik"},
-    {id: 6, name: "Qirg'iz"}
-])
-const Kurs = ref([
-    {id: 1, name: "I-bosqish"},
-    {id: 2, name: "II-bosqish"},
-    {id: 3, name: "III-bosqish"},
-    {id: 4, name: "VI-bosqish"},
-])
-const TalimShakli = ref([
-    {id: 1, name: "Kunduzgi"},
-    {id: 2, name: "Kehcki"},
-    {id: 3, name: "Sirtqi"},
-    {id: 4, name: "Ikkinchi mutaxasislik"},
-])
-const stipendiya = ref([
-    {id: 1, name: "O'zbekiston Respublikasi prezidenti"},
-    {id: 2, name: "Islom Karimov"},
-    {id: 3, name: "Navoiy"},
-    {id: 4, name: "Pahlavon Mahmud"},
-    {id: 5, name: "Kamoliddin Behzod"},
-    {id: 6, name: "Universitet stipendiyasi"}
-])
 const Tahrirlash = () => {
     router.push("/profil/edit")
 }
@@ -233,21 +265,6 @@ const options = ref([
     }
 ])
 let input_type = ref("password")
-const fakultet = ref([
-    {id: 1, name: "Matematika"},
-    {id: 2, name: "Axborot texnologiyalari"},
-    {id: 3, name: "Ona tili va adabiyot"},
-    {id: 4, name: "Jismoniy madaniyat"},
-    {id: 5, name: "Tabiiy fanlar"}
-])
-const yonalish = ref([
-    {id: 1, name: "Matematika"},
-    {id: 2, name: "Informatika"},
-    {id: 3, name: "Ona tili va adabiyot"},
-    {id: 4, name: "Jismoniy tarbiya"},
-    {id: 5, name: "Mehnat"},
-    {id: 6, name: "Huquqshunoslik"},
-])
 const Hujjatlar = () => {
     router.push("/user/document")
 }
@@ -282,20 +299,25 @@ onMounted(() => {
 <style scoped>
 .containers{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: rgba(33, 33, 99, 0.915);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
+.tavsif{
+    margin: 10px 0px;
+}
 .profil_header{
     width: 100%;
-    height: 100px;
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     /* border: 2px solid red; */
+    padding: 0px 65px;
+    margin: 10px 0px;
 }
 .profil_header .person_icon{
     margin-right: 10px;
@@ -304,7 +326,7 @@ onMounted(() => {
     width: 40%;
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 }
 .line{
@@ -312,22 +334,23 @@ onMounted(() => {
     cursor: pointer;
 }
 .search_input{
-    width: 250px;
+    width: 360px;
 }
 /* .profil_header .header_left2{
     width: 60%;
 } */
 .search_icon{
     position: absolute;
-    right: 10px;
+    right: 110px;
     cursor: pointer;
     top: 10px;
 }
 .login_top{
-    width: 70%;
+    width: 90%;
     min-height: 540px;
     background-color: rgb(235, 238, 238);
     display: flex;
+    /* border: 2px solid red; */
 }
 .login_top .login_about{
     width: 33%;
@@ -347,8 +370,12 @@ onMounted(() => {
 }
 .login_top .login_about ul li{
     text-align: center;
-    cursor: pointer;
     margin: 10px 0px;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+.login_top .login_about ul li .n-icon{
+    margin-right: 10px;
 }
 .login_top .login_about ul li:first-child{
     margin-bottom: 40px;
@@ -361,6 +388,7 @@ onMounted(() => {
     font-family: sans-serif;
     display: flex;
 }
+
 .login_remember{
     margin: 10px 0px;
     background-color: white;
@@ -430,7 +458,7 @@ label{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding: 10px 10px;
 }
 .profil_about{
@@ -646,7 +674,7 @@ label{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding: 10px;
 }
 .profil_about{

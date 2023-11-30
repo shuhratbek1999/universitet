@@ -1,23 +1,18 @@
 <template>
      <div class="containers">
+         <div class="loader"></div>
          <div class="login_top">
               <div class="login_about">
                   <ul>
-                    <li><img src="../../assets/images/logo.png" alt=""></li>
-                    <li class="iqtidor">Iqtidorli <br> talabalar!</li>
                     <li class="kelibsiz">tizimiga xush kelibsiz!</li>
                     <li class="royhat">
                         Tizimda profilingiz yo'qmi?
                         <span @click="Register"> Hozir ro'yxatdan o'ting!</span>
                     </li>
-                    <li class="admin">
-                        Adminlar uchun
-                        <span>Bu yerga bosing</span>
-                    </li>
                   </ul>
               </div>
               <div class="login_kirish">
-                    <div class="header">Kirish</div>
+                    <div class="header">TBA - axborot tizimi</div>
                    <n-form ref="formRef" :model="model" :rules="rules">
                     <n-form-item label="Email" path="email">
                     <n-input 
@@ -42,19 +37,6 @@
                     <EyeOffOutline @click="handleInput" />
                     </n-icon>
                     </n-form-item>
-                    <!-- <n-form-item
-                    ref="rPasswordFormItemRef"
-                    first
-                    path="reenteredPassword"
-                    label="Re-enter Password"
-                    >
-                    <n-input
-                        v-model:value="model.reenteredPassword"
-                        :disabled="!model.password"
-                        type="password"
-                        @keydown.enter.prevent
-                    />
-                    </n-form-item> -->
                     <n-row :gutter="[0, 24]">
                     <n-col :span="24">
                         <div style="display: flex; justify-content: center">
@@ -83,7 +65,7 @@
     </div>
 </template>
 <script setup>
-import {ref} from "vue"; 
+import {onMounted, ref} from "vue"; 
 import {useMessage} from "naive-ui";
 import { EyeOffOutline } from "@vicons/ionicons5";
 import {useRouter} from "vue-router"
@@ -109,12 +91,20 @@ let rules = {
         validator(rule, value){
             if(!value){
                 return new Error("Email is required");
-            } else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(model.value.email)) {
-              return new Error("Email should be an integer");
-            } else if (Number(value) < 18) {
-              return new Error("Email should be above 18");
+            } 
+            else{
+                console.log(value, rule)
+                let tekshir = value.includes('@gmail.com')
+                if(!tekshir){
+                   return new Error("Yaroqsiz email")
+                }
             }
-            return true;
+            // else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(model.value.email)) {
+            //   return new Error("Email should be an integer");
+            // } else if (Number(value) < 18) {
+            //   return new Error("Email should be above 18");
+            // }
+            // return true;
             },
         trigger: ["input", "blur"]
         }
@@ -166,8 +156,82 @@ const handleInput = () => {
 const Register = () => {
      router.push("/register")
 }
+ 
+// const loader = () => { 
+//     let load = document.querySelector('.loader');
+//     let avvalgiManzil = document.referrer;
+//     console.log("logiinnnn", avvalgiManzil)
+//     if(avvalgiManzil.length == 0){
+//         console.log("documennnnttttt", avvalgiManzil);
+//         window.addEventListener('load', () =>{
+//             setTimeout(() => {
+//                 load.style.display = "none"
+//             }, 1000); 
+//         })
+//     }
+//     else{ 
+//         console.log("xayooooooooot", document.referrer)
+//        setTimeout(() => {
+//                 load.style.display = "none"
+//             }, 1000); 
+//     }
+// } 
+
+// onMounted(() => {
+//     loader()
+// })
 </script>
 <style scoped>
+body{
+    background-color: green;
+}
+.loader{
+    width: 100%;
+    height: 100vh;
+    background: #000 url('../../assets/images/loader4.gif') no-repeat center;
+    z-index: 100;
+    position: fixed;
+    background-size: 20%;
+    display: none;
+    /* animation: animate 1.5s linear infinite;
+    clip: rect(0, 80px, 80px, 40px);
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    left: calc(50% - 40%);
+    top: calc(50% - 40%); */
+}
+/* @keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(220deg);
+    }
+}
+.loader::after{
+    animation: animate2 1.5s ease-in-out infinite;
+    clip: rect(0px, 80px, 80px, 40px);
+    content: '';
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+}
+@keyframes animate2{
+    0%{
+        box-shadow: unset #ffff 0 0 0 17px;
+        transform: rotate(-140deg);
+    }
+    50%{
+        box-shadow: unset #ffff 0 0 0 2px;
+        transform: rotate(-140deg);
+    }
+    100%{
+       box-shadow: unset #ffff 0 0 0 17px;
+        transform: rotate(-140deg); 
+    }
+} */
 .containers{
     width: 100%;
     height: 100vh;
@@ -184,6 +248,7 @@ const Register = () => {
     display: flex;
 }
 .login_top .login_about{
+    /* border: 1px solid red; */
     width: 33%;
     background-image: url("../../assets/images/bodyback.png");
     background-position: center;
@@ -192,12 +257,13 @@ const Register = () => {
     background-size: cover;
 }
 .login_top .login_about ul{
+    height: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .login_top .login_about ul .iqtidor{
     color: white; 

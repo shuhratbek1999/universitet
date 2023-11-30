@@ -1,11 +1,12 @@
 <template>
     <div class="reyting">
+        <!-- salom -->
         <div class="reyting_header">
+            <div class="topMenu">
+                <TopMenu />
+            </div>
             <div class="reyting_top">
                 <Navbar class="Navbar">
-                    <template v-slot:image> 
-                       <img src="../../assets/images/logo-blue.png" alt="">
-                     </template>
                     <template v-slot:button> 
                        <div class="navbar_item">
                             <div 
@@ -26,6 +27,9 @@
                  </Navbar>
             </div>
         </div>
+        <div class="Matbuot">
+            <Matbuot />
+        </div>
         <div class="tanlovs">
             <Yangiliklar />
         </div>
@@ -43,8 +47,10 @@
 </template>
 <script setup>
 import Navbar from "../../components/Navbar.vue";
+import Matbuot from "../../components/Matbuot.vue";
 import Footer from "../../components/Footer.vue";
-import Yangiliklar from "../../components/Yangiliklar.vue";
+import Yangiliklar from "../../components/News.vue";
+import TopMenu from "../../components/TopMenu.vue";
 import Elon from "../../components/Elon.vue";
 import {ClipboardBulletListLtr16Regular,Certificate24Filled} from "@vicons/fluent";
 import {useRouter} from "vue-router";
@@ -67,26 +73,68 @@ const Royhat = () => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* position: relative; */
+}
+.reyting .Elonlar{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
 }
 .elon_title{
     text-align: center;
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bold;
+     padding-left: 70px;
+}
+.topMenu{
+    width: 100%;
+    height: 40px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F8F9;
+    /* margin: 0 auto; */
+}
+.reyting_header{
+    width: 100%;
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reyting_header .reyting_top{
+    position: sticky;
+    top: 0;
+    width: 90%;
+    height: 60px;
+    /* border: 2px solid red; */
+    /* padding: 0px 50px; */
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgb(212, 210, 210);
+    border-bottom: 1px solid rgb(202, 200, 200);
+    margin: 10px 0px 0px 0px;
 }
 .navbar_item{
     display: flex;
 }
-.reyting_header{
-    width: 90%;
-    /* border: 2px solid blue; */
-}
 .reyting_header_content{
+    width: 90%;
     display: flex;
+    justify-content: space-between;
     margin: 20px 0px;
 }
 .reyting_header_content .left{
     width: 460px;
     margin-right: 30px;
+    /* border: 2px solid red; */
 }
 .reyting_header_content .left .left_title{
     font-size: 44px;
@@ -114,8 +162,11 @@ const Royhat = () => {
     width: 100%;
 }
 @media(max-width: 375px){
+.topMenu{
+    display: none;
+}
 .reyting{
-    width: 375px;
+    width: 100%;
     height: 100vh;
     /* border: 2px solid red; */
     background-color: rgb(229, 231, 231);
@@ -126,20 +177,21 @@ const Royhat = () => {
     overflow-x: hidden;
 }
 .reyting_header{
-    width: 370px;
-    /* border: 2px solid blue; */
+    width: 100%;
+    border: 2px solid blue;
 }
 .reyting_header_content{
     display: flex;
-    margin: 20px 0px;
+    margin: 0px;
 }
 .elon_title{
     text-align: center;
     font-size: 15px;
     font-weight: bold;
+     padding-left: 50px;
 }
 .reyting_header_content .left{
-    width: 300px;
+    width: 80%;
     margin-right: 10px;
     /* border: 2px solid yellow; */
 }
@@ -166,10 +218,10 @@ const Royhat = () => {
     width: 150px !important;
 }
 .tanlovs{
-    width: 370px;
+    width: 100%;
 }
 .footer{
-    width: 370px;
+    width: 100%;
 }
 }
 </style>

@@ -2,9 +2,7 @@
     <div class="news">
         <div class="news_header">
             <div class="news_line">
-                <div class="left"></div>
-                <div class="right"></div>
-                <div class="line"></div>
+                News
             </div>
             <div class="news_title">Yangiliklar</div>
         </div>
@@ -78,35 +76,14 @@ const news = ref([
 .news_header .news_line{
     width: 50%;
     position: relative;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 600;
     /* margin: 0px auto; */
-}
-.news_header .news_line .line{
-    width: 600px;
-    height: 2px;
-    background-color: black;
-    /* margin-top: 45px; */
 }
 .news_header .news_title{
     font-size: 22px;
     font-weight: 700;
-}
-.news_header .news_line .right{
-    width: 100px;
-    height: 2px;
-    background-color: black;
-    position: absolute;
-    top: 17px;
-    left: 505px;
-    transform: rotate(-20deg);
-}
-.news_header .news_line .left{
-     width: 100px;
-    height: 2px;
-    background-color: black;
-    position: absolute;
-    top: -17px;
-    left: 505px;
-    transform: rotate(20deg);
 }
 .news_content{
     width: 90%;
@@ -116,9 +93,9 @@ const news = ref([
 }
 .news_content .news_list{
     /* border: 2px solid rgb(201, 197, 197); */
-    width: 23%;
+    width: 23.5%;
     background-color: rgba(201, 197, 197, 0.2);
-    margin: 5px;
+    margin: 5px 8px;
     padding: 10px;
     box-shadow: 1px 1px 5px grey;
     transition: all 0.9s ease-in-out;
@@ -141,6 +118,11 @@ const news = ref([
     font-weight: 600;
     font-family: sans-serif;
     /* font-style: */
+}
+.news_list .news_time{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
 }
 .news_list .news_text{
     text-indent: 20px;
@@ -216,6 +198,7 @@ const news = ref([
     align-items: center;
     font-size: 10px !important;
     padding: 5px 0px;
+    /* border: 1px solid red; */
 }
 .news_list .news_time .n-icon{
     font-size: 15px !important;

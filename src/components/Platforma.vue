@@ -2,7 +2,10 @@
     <div class="platforma">
           <div class="platforma_header">
             <div class="lines"></div>
-            <div class="titles">BIZ HAQIMIZDA PLATFORMALARI</div>
+            <div class="titles">
+                <div class="platforma_left">BIZ HAQIMIZDA PLATFORMALARI</div>
+                <div class="platforma_right">Platformalar</div>
+            </div>
           </div>
           <div class="platforma_list">
                <div class="news_list" v-for="(item, index) in news" :key="index">
@@ -68,34 +71,40 @@ const news = ref([
     /* text-align: center; */
     width: 100%;
     height: 70px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
 }
 .platforma_header .titles{
+    width: 90%;
     font-size: 22px;
     font-weight: 550;
     font-family: sans-serif;
     color: rgb(15, 15, 43);
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0px 30px; */
 }
 .platforma_list .news_list{
-    /* border: 2px solid rgb(201, 197, 197); */
-    width: 20%;
+    /* border: 2px solid red; */
+    width: 22%;
     height: 300px;
     background-color: white;
     margin: 5px;
     padding: 10px;
     box-shadow: 1px 1px 5px grey;
-    transition: all 0.9s ease-in-out;
     cursor: pointer;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.platforma_list .news_list:hover{
+/* .platforma_list .news_list:hover{
     transform: scale(0.95,1.04);
-}
+} */
 .news_list .news_img{
     text-align: center;
+    margin: 10px 0px;
     /* height: 200px; */
 }
 .news_list .news_img img{

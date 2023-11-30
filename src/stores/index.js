@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { defineStore } from "pinia";
+import { eStore } from "pinia";
 
 export const Register = defineStore("register", () => {
   let registratsiya = ref({})

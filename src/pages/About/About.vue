@@ -1,11 +1,11 @@
 <template>
     <div class="reyting">
+        <div class="topMenu">
+            <TopMenu />
+        </div>
         <div class="reyting_header">
             <div class="reyting_top">
                 <Navbar class="Navbar">
-                    <template v-slot:image> 
-                       <img src="../../assets/images/logo-blue.png" alt="">
-                     </template>
                     <template v-slot:button> 
                         <div class="navbar_item">
                             <div 
@@ -97,12 +97,17 @@ yoshlardan iborat jamoalarni saralash to'g'risida nizom</li>
                 </template>
             </Hujjat>
         </div>
+        <div class="statistika">
+            <Statistika/>
+        </div>
         <div class="footer">
            <Footer />
         </div>
     </div>
 </template>
 <script setup>
+import TopMenu from "../../components/TopMenu.vue";
+import Statistika from "../../components/Statistika.vue";
 import Navbar from "../../components/Navbar.vue";
 import Hujjat from "../../components/Hujjat.vue";
 import Footer from "../../components/Footer.vue";
@@ -119,26 +124,57 @@ const Royhat = () => {
 </script>
 
 <style scoped>
-.reyting{
+.reyting {
     width: 100%;
     height: 100vh;
-    /* border: 2px solid red; */
     background-color: rgb(229, 231, 231);
-    /* color: white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.statistika{
+    width: 100%;
+    min-height: 800px;
+    /* border: 1px solid red; */
+}
+.reyting_header {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.reyting_header{
+
+.reyting_header .reyting_top {
     width: 90%;
-    /* border: 2px solid blue; */
+    height: 70px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
+}
+.topMenu{
+    width: 100%;
+    height: 40px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F8F9;
+    /* margin: 0 auto; */
 }
 .navbar_item{
     display: flex;
+    /* border: 1px solid red; */
 }
 .reyting_header_content{
+    width: 90%;
     display: flex;
+    justify-content: space-between;
     margin: 20px 0px;
+     /* border: 1px solid red; */
 }
 .reyting_header_content .left{
     width: 460px;
@@ -153,6 +189,7 @@ const Royhat = () => {
 .reyting_header_content .left .left_text{
     text-indent: 20px;
     font-family: sans-serif;
+    padding: 40px 0px;
 }
 .reyting_header_content .left .left_texts{
     font-size: 17px;
@@ -175,7 +212,7 @@ const Royhat = () => {
 
 @media(max-width: 375px){
 .reyting{
-    width: 375px;
+    width: 100%;
     height: 100vh;
     /* border: 2px solid red; */
     background-color: rgb(229, 231, 231);
@@ -188,17 +225,22 @@ const Royhat = () => {
     width: 90%;
     /* border: 2px solid blue; */
 }
+.statistika{
+    width: 100%;
+    min-height: 1100px;
+    /* border: 1px solid red; */
+}
 .reyting_header_content{
     width: 100%;
     display: flex;
     margin: 20px 0px;
 }
 .reyting_header_content .left{
-    width: 200px;
+    width: 60%;
     margin-right: 30px;
 }
 .reyting_header_content .right{
-    width: calc(100% - 200px);
+    width: calc(100% - 60%);
     margin-right: 10px;
     /* border: 2px solid red; */
 }

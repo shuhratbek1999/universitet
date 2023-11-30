@@ -177,16 +177,12 @@
               </div>
          </div>
          <div class="login_footer">
-              <div class="foter_name">
-                  2023 © O'zMUJF
-              </div>
-              <div class="foter_link">
-                  RTTM tomonidan ishlab chiqilgan
-              </div>
+               <Footer/>
          </div>
     </div>
 </template>
 <script setup>
+import Footer from "../../components/Footers.vue"
 import {ref, onMounted,h} from "vue"; 
 import {useMessage, NIcon} from "naive-ui";
 import { EyeOffOutline,PersonCircleOutline,LogOutOutline } from "@vicons/ionicons5";
@@ -398,7 +394,7 @@ onMounted(() => {
 <style scoped>
 .containers{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: rgba(33, 33, 99, 0.915);
     display: flex;
     flex-direction: column;
@@ -407,11 +403,13 @@ onMounted(() => {
 }
 .profil_header{
     width: 100%;
-    height: 100px;
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     /* border: 2px solid red; */
+    padding: 0px 65px;
+    margin: 10px 0px;
 }
 .profil_header .person_icon{
     margin-right: 10px;
@@ -420,7 +418,7 @@ onMounted(() => {
     width: 40%;
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 }
 .line{
@@ -428,22 +426,23 @@ onMounted(() => {
     cursor: pointer;
 }
 .search_input{
-    width: 250px;
+    width: 360px;
 }
 /* .profil_header .header_left2{
     width: 60%;
 } */
 .search_icon{
     position: absolute;
-    right: 10px;
+    right: 110px;
     cursor: pointer;
     top: 10px;
 }
 .login_top{
-    width: 70%;
+    width: 90%;
     min-height: 540px;
     background-color: rgb(235, 238, 238);
     display: flex;
+    /* border: 2px solid red; */
 }
 .login_top .login_about{
     width: 33%;
@@ -465,6 +464,10 @@ onMounted(() => {
     text-align: center;
     margin: 10px 0px;
     cursor: pointer;
+    /* border: 1px solid red; */
+}
+.login_top .login_about ul li .n-icon{
+    margin-right: 10px;
 }
 .login_top .login_about ul li:first-child{
     margin-bottom: 40px;
@@ -478,7 +481,7 @@ onMounted(() => {
     display: flex;
 }
 .Kirish{
-    width: 300px !important;
+    width: 450px !important;
 }
 .input{
     width: 500px !important;
@@ -493,15 +496,18 @@ onMounted(() => {
     /* margin-top: 30px; */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     overflow-y: scroll;
     padding: 10px 10px;
 }
 .profil_about{
-    width: 75%;
+    width: 90%;
     background-color: white;
     border-radius: 5px;
     padding: 15px;
+    /* border: 1px solid red; */
+    box-shadow: 2px 2px 5px 1px rgb(196, 194, 194),
+    -2px -2px 5px 1px rgb(175, 172, 172);
 }
 .profil_about_text .text{
     display: flex;
@@ -513,22 +519,23 @@ onMounted(() => {
     font-weight: 500;
 }
 .profil_about_header{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     font-family: sans-serif;
 }
 .eye_icon{
     position: absolute;
-    right: 10px;
-    top: 8px;
+    right: 190px;
+    top: 10px;
     cursor: pointer;
+    color: black;
 }
 .tahrirlash{
     width: 200px !important;
     margin: 15px 0px;
 }
 .header{
-    width: 70%;
+    width: 90%;
     text-align: left;
     cursor: pointer;
     font-size: 16px;
@@ -536,6 +543,7 @@ onMounted(() => {
     color: rgb(5, 64, 131);
     padding: 20px 0px;
     font-weight: 900;
+    /* border: 2px solid blue; */
 }
 .login_footer{
     width: 99%;
@@ -549,12 +557,14 @@ onMounted(() => {
     width: 35%;
     text-align: right;
 }
+.profil_button{
+    position: relative;
+}
 .foter_link{
     width: calc(100% - 35%);
     text-align: right;
     margin-right: 30px  ;
 }
-
 @media(max-width: 375px){
 .containers{
     width: 370px;

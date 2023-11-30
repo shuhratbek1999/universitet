@@ -2,7 +2,7 @@
     <div class="footer">
             <div class="footer_left">
                  <div class="footer_left_title">BIZ HAQIMIZDA</div>
-                 <div class="footer_left_img"><img src="../assets/images/logo.png" width="120" alt=""></div>
+                 <div class="footer_left_img"><img src="../assets/images/logoss.png" width="120" alt=""></div>
             </div>
             <div class="footer_center">
                 <div class="footer_center_title">

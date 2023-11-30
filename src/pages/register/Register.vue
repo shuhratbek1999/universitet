@@ -3,7 +3,7 @@
          <div class="login_top">
               <div class="login_about">
                   <ul>
-                    <li><img src="../../assets/images/logo.png" alt=""></li>
+                    <!-- <li><img src="../../assets/images/logo.png" alt=""></li> -->
                     <li class="login_title">Xush kelibsiz!</li>
                     <li class="logins" style="color: rgb(241, 194, 131)">
                         Allaqachon hisobingiz bormi? <br>
@@ -44,23 +44,24 @@
                     <n-form-item label="Fakultetingini tanlang" path="fakultet"> 
                         <n-select
                             v-model:value="model.fakultet"
-                            :options="fakultet"
+                            :options="fakultets"
                             label-field="name"
                             value-field="id"
                             class="viloyat"
                             filterable
-                            clearable
                             > </n-select>
                     </n-form-item>
                     <n-form-item label="Yo'nalishingizni tanlang" path="yonalish"> 
                         <n-select
                             v-model:value="model.yonalish"
-                            :options="yonalish"
+                            :options="yonalishs"
                             label-field="name"
-                            value-field="name"
+                            value-field="id"
                             class="viloyat"
                             filterable 
-                            > </n-select>
+                            placeholder="yo'nalish tanlang"
+                            > 
+                        </n-select>
                     </n-form-item>
                     <n-form-item path="password" label="Password">
                     <n-input
@@ -132,20 +133,20 @@ let input_type = ref("password")
 let model = ref({
     name: "",
     phone: "",
-    fakultet: "",
-    yonalish: "",
+    fakultet: null,
+    yonalish: null,
     email: "",
     password: "",
     reenteredPassword: ""
 })
-const fakultet = ref([
+const fakultets = ref([
     {id: 1, name: "Matematika"},
     {id: 2, name: "Axborot texnologiyalari"},
     {id: 3, name: "Ona tili va adabiyot"},
     {id: 4, name: "Jismoniy madaniyat"},
     {id: 5, name: "Tabiiy fanlar"}
 ])
-const yonalish = ref([
+const yonalishs = ref([
     {id: 1, name: "Matematika"},
     {id: 2, name: "Informatika"},
     {id: 3, name: "Ona tili va adabiyot"},
@@ -273,6 +274,8 @@ const Login = () => {
     background-size: cover;
 }
 .login_top .login_about ul{
+    width: 100%;
+    height: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
